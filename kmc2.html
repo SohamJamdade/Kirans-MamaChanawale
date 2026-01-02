@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kiran's Mama Chanawala</title>
+
+<style>
+:root {
+    --red:#b30000;
+    --green:#25d366;
+}
+
+/* BASE */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#fff,#f1f1f1);
+    margin:0;
+}
+
+/* OFFER BANNER */
+.offer-banner {
+    background: linear-gradient(90deg,#b30000,#ff4d4d);
+    color:#fff;
+    padding:10px;
+    font-weight:bold;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.offer-text {
+    display:inline-block;
+    animation: scrollOffer 15s linear infinite;
+}
+@keyframes scrollOffer {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity:0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.reveal.active {
+    opacity:1;
+    transform: translateY(0);
+}
+
+/* CARD */
+.pamphlet {
+    max-width:900px;
+    margin:90px auto 40px;
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+h1 {
+    text-align:center;
+    color:var(--red);
+}
+.tagline {
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:30px;
+}
+
+h2 {
+    margin-top:40px;
+    border-bottom:2px solid #ddd;
+    padding-bottom:6px;
+}
+
+ul { list-style:none; padding:0; }
+
+li {
+    display:flex;
+    justify-content:space-between;
+    padding:10px;
+    border-radius:6px;
+    transition:0.3s;
+}
+li:hover {
+    background:#fff5f5;
+    transform:scale(1.01);
+}
+
+.price { font-weight:bold; }
+
+/* BADGES */
+.badge {
+    background: gold;
+    color:#000;
+    padding:3px 8px;
+    font-size:12px;
+    border-radius:12px;
+    margin-left:8px;
+}
+.badge.new { background:#28a745; color:#fff; }
+.badge.hot { background:#ff5722; color:#fff; }
+
+/* GALLERY */
+.gallery-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+.gallery-grid img {
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.gallery-grid img:hover { transform:scale(1.05); }
+
+/* LIGHTBOX */
+.lightbox {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+.lightbox img {
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+
+/* CONTACT */
+.contact-box {
+    background:#fff3f3;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    margin-top:40px;
+}
+.buttons a {
+    display:inline-block;
+    margin:10px;
+    padding:14px 28px;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.call-btn { background:#28a745; }
+.whatsapp-btn { background:var(--green); }
+
+/* MAP */
+.map-box iframe {
+    width:100%;
+    height:300px;
+    border:0;
+    border-radius:12px;
+}
+
+/* STICKY BAR */
+.sticky-bar {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
+    z-index:1000;
+}
+.sticky-bar a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.footer {
+    text-align:center;
+    margin-top:30px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- OFFER -->
+<div class="offer-banner">
+    <div class="offer-text">
+        🔥 Today’s Special: Peri Peri Chana @ ₹380/kg • Bulk Orders Available • Call 📞 9822285248
+    </div>
+</div>
+
+<!-- STICKY CTA -->
+<div class="sticky-bar">
+    <a href="tel:9822285248">📞 Call</a>
+    <a href="https://wa.me/919822285248">💬 WhatsApp</a>
+</div>
+
+<div class="pamphlet">
+
+<h1 class="reveal">🔸 KIRAN'S MAMA CHANAWALA 🔸</h1>
+<div class="tagline reveal">Fresh • Crunchy • Hygienic • Wholesale & Retail</div>
+
+<h2 class="reveal">Snacks</h2>
+<ul class="reveal">
+<li>Salted Chana <span class="price">₹300 / kg</span></li>
+<li>Salted Peanuts <span class="price">₹300 / kg</span></li>
+<li>Masala Peanuts <span class="badge hot">🔥 Best Seller</span><span class="price">₹400 / kg</span></li>
+</ul>
+
+<h2 class="reveal">All Flavoured Chana</h2>
+<ul class="reveal">
+<li>Chat <span class="price">₹400 / kg</span></li>
+<li>Limbu <span class="price">₹400 / kg</span></li>
+<li>Pudina <span class="price">₹400 / kg</span></li>
+<li>Garlic <span class="price">₹400 / kg</span></li>
+<li>Cheese <span class="price">₹400 / kg</span></li>
+<li>Tomato <span class="price">₹400 / kg</span></li>
+<li>Hing <span class="price">₹400 / kg</span></li>
+<li>Peri Peri <span class="badge new">🆕 New</span><span class="price">₹400 / kg</span></li>
+<li>Barbeque <span class="price">₹400 / kg</span></li>
+<li>Limbu Pudina <span class="price">₹400 / kg</span></li>
+<li>Schezwan <span class="price">₹400 / kg</span></li>
+<li>Manchurian <span class="price">₹400 / kg</span></li>
+<li>Jira Masala <span class="price">₹400 / kg</span></li>
+<li>Chana Chor <span class="badge">⭐ Popular</span><span class="price">₹400 / kg</span></li>
+</ul>
+
+<h2 class="reveal">Kabuli Chana</h2>
+<ul class="reveal">
+<li>Chat <span class="price">₹400 / kg</span></li>
+<li>Limbu <span class="price">₹400 / kg</span></li>
+<li>Garlic <span class="price">₹400 / kg</span></li>
+<li>Black Pepper <span class="price">₹400 / kg</span></li>
+</ul>
+
+<h2 class="reveal">Chikki</h2>
+<ul class="reveal">
+<li>Peanut <span class="price">₹300 / kg</span></li>
+<li>Peanut Crush <span class="price">₹300 / kg</span></li>
+<li>Coconut <span class="price">₹320 / kg</span></li>
+<li>Sesame <span class="price">₹320 / kg</span></li>
+<li>Chocolate <span class="price">₹320 / kg</span></li>
+<li>Strawberry <span class="price">₹320 / kg</span></li>
+<li>Mix Chikki <span class="price">₹320 / kg</span></li>
+<li>Cashew <span class="price">₹800 / kg</span></li>
+<li>Cashew Badam <span class="price">₹880 / kg</span></li>
+</ul>
+
+<h2 class="reveal">Fudge</h2>
+<ul class="reveal">
+<li>Chocolate Walnut <span class="price">₹1200 / kg</span></li>
+<li>Strawberry <span class="price">₹800 / kg</span></li>
+<li>Mango <span class="price">₹800 / kg</span></li>
+</ul>
+
+<h2 class="reveal">Our Signatures:-</h2>
+<div class="gallery-grid reveal">
+<img src="c:\Users\vaish\Desktop\Mama chanawala\strawberry chikki .jpeg" onclick="openImg(this)"> 
+<img src="c:\Users\vaish\Desktop\Mama chanawala\salted peanuts .jpeg" onclick="openImg(this)">
+<img src="c:\Users\vaish\Desktop\Mama chanawala\salted chana.jpeg" onclick="openImg(this)">
+<img src="c:\Users\vaish\Desktop\Mama chanawala\Mango Fudge.jpeg" onclick="openImg(this)">
+<img src="c:\Users\vaish\Desktop\Mama chanawala\Coconut chikki .jpeg" onclick="openImg(this)">
+<img src="c:\Users\vaish\Desktop\Mama chanawala\Chana chor.jpeg" onclick="openImg(this)">
+</div>
+
+<div class="contact-box reveal">
+<h2>Contact & Address</h2>
+<p>📞 9822285248</p>
+<p>📍 102, Shivaji Circle,<br>Mahabaleshwar, Satara – 412806</p>
+
+<div class="buttons">
+<a href="tel:9822285248" class="call-btn">Call Now</a>
+<a href="https://wa.me/919822285248" class="whatsapp-btn">WhatsApp Order</a>
+</div>
+</div>
+
+<div class="contact-box reveal">
+<h2>Find Us on Google Maps</h2>
+<div class="map-box">
+<iframe src="https://www.google.com/maps?q=Mahabaleshwar%20Shivaji%20Circle&output=embed"></iframe>
+</div>
+<p><a href="https://maps.google.com/?q=Mahabaleshwar Shivaji Circle" target="_blank"><b>📍 Navigate Now</b></a></p>
+</div>
+
+<div class="footer reveal">
+THANK YOU FOR SHOPPING WITH US ❤️<br>Visit Again!
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" onclick="this.style.display='none'">
+<img id="lightboxImg">
+</div>
+
+<script>
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+
+/* IMAGE POPUP */
+function openImg(img) {
+    document.querySelector('.lightbox').style.display = 'flex';
+    document.getElementById('lightboxImg').src = img.src;
+}
+</script>
+
+</body>
+</html>
